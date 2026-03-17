@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
     try {
         const body = req.body || {};
         
-        // 3. Browser Test Check (Handle GET requests)
+        // 3. Browser Test Check (Show "Online" if not coming from the AI)
         const isToolCall = body.message && body.message.type === 'tool-call';
         if (!isToolCall) {
             return res.status(200).json({ 
@@ -85,7 +85,7 @@ module.exports = async (req, res) => {
         return res.status(200).json({
             results: [{
                 toolCallId: (req.body && req.body.message && req.body.message.toolCalls) ? req.body.message.toolCalls[0].id : "error",
-                result: "Available" // Fail-safe: let the call continue
+                result: "Available"
             }]
         });
     }
