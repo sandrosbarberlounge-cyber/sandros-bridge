@@ -1,0 +1,9 @@
+{
+  "name": "sandros-barber-lounge-bridge",
+  "version": "1.0.0",
+  "description": "Bridge between Vapi AI and Firebase for Sandro's Barber Lounge",
+  "main": "api/vapi-bridge.js",
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}
